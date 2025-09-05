@@ -1,26 +1,61 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, sans-serif;
+  background: #0b0d0f;
+  color: #e5e7eb;
+  line-height: 1.5;
 }
+
+/* Shared */
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn {
+  background: #22c55e;
+  color: black;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s;
+}
+.btn:hover {
+  background: #1ea34f;
+}
+.card {
+  background: #0f1216;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 20px;
+}
+.tl-badge {
+  background: #0d1014;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 8px 14px;
+  display: inline-flex;
+  gap: 10px;
+}
+.tl-dot {
+  width: 12px; height: 12px; border-radius: 50%;
+}
+.red { background: #ef4444; box-shadow: 0 0 12px rgba(239,68,68,.6); }
+.yellow { background: #f59e0b; box-shadow: 0 0 12px rgba(245,158,11,.55); }
+.green { background: #22c55e; box-shadow: 0 0 12px rgba(34,197,94,.65); }
+
+/* Loader */
+@keyframes pulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+.pulse { animation: pulse 1.4s infinite; }
+.pulse:nth-child(2){ animation-delay: .2s; }
+.pulse:nth-child(3){ animation-delay: .4s; }
